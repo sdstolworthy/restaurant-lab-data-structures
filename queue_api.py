@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from linkedlist import LinkedList
+from linkedlist_api import LinkedList
 
 class Queue(object):
     '''
@@ -11,15 +11,15 @@ class Queue(object):
     
     def __init__(self):
         '''Constructor'''
-        
+        self.queue = LinkedList()
     
     def debug_print(self):
         '''Prints a representation of the entire queue.'''
-
+        self.queue.debug_print()
 
     def enqueue(self, item):
         '''Adds an item to the end of the queue'''
-        
+        self.queue.add(item)
         
     def dequeue(self):
         '''
@@ -28,7 +28,10 @@ class Queue(object):
             2. Delete the node from the list.
             3. Return the value of the node.
         '''
+        n = self.queue.get(0)
+        self.queue.delete(0)
+        return n
 
     def size(self):
         '''Returns the number of items in the queue'''
-
+        return self.queue.size

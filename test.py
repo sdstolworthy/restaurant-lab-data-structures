@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from queue import Queue
+from queue_api import Queue
 
 ll = Queue()
 ll.enqueue('a')
